@@ -10,8 +10,10 @@ You are going to need to setup python3
 
 ### install python packages
 
-`pip3 install bybit`
-`pip3 install pandas`
+```
+pip3 install bybit
+pip3 install pandas
+```
 
 ### update the settings
 
@@ -29,6 +31,8 @@ api_secret = "YOUR_SECRET"
 
 ## Run the script
 
-`python3 main.py`
+```
+python3 main.py
+```
 
 I automated this script with cron to run every minute.
