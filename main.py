@@ -1,6 +1,7 @@
 import bybit
 import math
 import pandas as pd
+import time
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
@@ -131,7 +132,7 @@ def calculate_mid_price():
 
     for n in range(1, 4):
         from_date = datetime.now() + relativedelta(hours=-(n*3))
-        unix_from_date = from_date.strftime("%s")
+        unix_from_date = time.mktime(from_date.timetuple())
         candle_info = get_result_from_response(client.Kline.Kline_get(
             symbol="BTCUSD", interval="1", **{'from': unix_from_date}))
         kline = kline.append(candle_info)
